@@ -5,7 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IJSE</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            font-weight: normal;
+            color: black;
+            font-style: normal;
+            text-decoration: none;
+            cursor: default;
+            list-style-type: none;
+        }
 
+        body {
+            font-family: Ubuntu, sans-serif;
+        }
+
+        header {
+            /*background-color: yellow;*/
+            padding: 5px 10px;
+            height: 60px;
+            border-bottom: 1px solid lightgrey;
+            text-align: right;
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            top: 0;
+
+            img {
+                border: 1px solid black;
+                vertical-align: middle;
+                position: absolute;
+                left: 10px
+            }
+        }
+
+        header > nav {
+            display: inline-block;
+
+            & > menu > li {
+                display: inline-block;
+                padding: 10px;
+                border: 1px solid black;
+                cursor: pointer;
+                position: relative;
+                height: 50px;
+
+                &:hover {
+                    background-color: lightgrey;
+                }
+
+                &.drop-down {
+                    padding: 20px;
+                }
+
+                & > menu {
+                    position: absolute;
+                    background-color: white;
+                    border: 1px solid black;
+                    width: calc(100% + 70px);
+                    top: 100%;
+                    left: 0;
+                    display: none;
+                }
+
+                li {
+                    padding: 10px;
+                    text-align: center;
+
+                    &:hover {
+                        background-color: lightgrey;
+                        cursor: pointer;
+                    }
+                }
+                &:hover > menu {
+                    display: block;
+                }
+
+                &:hover::after {
+                    border-top-color: darkred;
+                }
+
+                &.drop-down::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    right: 5px;
+                    top: 32%;
+                    border-top: 5px solid black;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+
+                }
+            }
+
+
+        }
+
+        main {
+            /*background-color: lightgreen;*/
+            margin-top: 60px;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
